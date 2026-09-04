@@ -62,7 +62,7 @@ export function DisciplinesSection() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 bg-surface text-foreground border-y border-border-subtle relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-surface text-foreground border-y border-border-subtle relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           chapter="CHAPTER 01"
@@ -257,8 +257,8 @@ export function DisciplinesSection() {
                     </div>
 
                     {/* Simulated Code Terminal */}
-                    <div className="p-4 rounded-2xl bg-black/90 border border-neutral-800 text-xs font-mono text-neutral-300 space-y-2 overflow-x-auto shadow-inner">
-                      <div className="flex items-center gap-1.5 pb-2 border-b border-neutral-800 text-neutral-500 text-[10px]">
+                    <div className="p-4 rounded-2xl bg-black/95 border border-border-strong text-xs font-mono text-white/90 space-y-2 overflow-x-auto shadow-inner">
+                      <div className="flex items-center gap-1.5 pb-2 border-b border-white/10 text-white/60 text-[10px]">
                         <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
                         <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
                         <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block" />
@@ -338,7 +338,7 @@ export function DisciplinesSection() {
                         <div className="text-xs font-mono font-bold text-white uppercase tracking-widest">
                           9:16 Reels · 16:9 Docu Series
                         </div>
-                        <div className="text-[10px] font-mono text-neutral-400">
+                        <div className="text-[10px] font-mono text-white/80">
                           Fashion · Food &amp; Beverage · Street Vox-Pop
                         </div>
                       </div>
