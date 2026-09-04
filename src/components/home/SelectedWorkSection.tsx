@@ -27,12 +27,12 @@ export function SelectedWorkSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-surface text-foreground relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-surface text-foreground relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
           <SectionHeading
-            chapter="CHAPTER 03"
+            chapter="CHAPTER 02"
             eyebrow="Portfolio & Proof"
             title="Selected Work."
             highlightTitle="Craft In Production."

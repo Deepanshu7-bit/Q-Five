@@ -67,7 +67,7 @@ export function Navbar() {
           <Logo size="md" />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 bg-surface/60 border border-border/60 backdrop-blur-md px-6 py-2 rounded-full shadow-sm">
+          <nav className="hidden lg:flex items-center gap-7 bg-surface/85 border border-border-strong/60 backdrop-blur-md px-6 py-2 rounded-full shadow-sm">
             {navLinks.map((link) => {
               const isActive =
                 link.href === "/"
@@ -87,12 +87,12 @@ export function Navbar() {
                       className={cn(
                         "flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider transition-colors py-1",
                         isActive
-                          ? "text-accent-crimson"
-                          : "text-foreground/80 hover:text-foreground"
+                          ? "text-accent-crimson font-black"
+                          : "text-foreground font-semibold hover:text-accent-crimson"
                       )}
                     >
                       {link.name}
-                      <ChevronDown className="w-3 h-3 transition-transform duration-200" />
+                      <ChevronDown className="w-3 h-3 transition-transform duration-200 opacity-70" />
                     </Link>
 
                     {/* Dropdown Menu */}
@@ -110,14 +110,14 @@ export function Navbar() {
                               key={sub.name}
                               href={sub.href}
                               className={cn(
-                                "flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-mono font-medium transition-colors hover:bg-surface-muted",
+                                "flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-mono font-medium transition-colors",
                                 pathname === sub.href
                                   ? "text-accent-crimson font-bold bg-surface"
-                                  : "text-foreground/80 hover:text-foreground"
+                                  : "text-foreground font-semibold hover:text-accent-crimson hover:bg-surface-muted"
                               )}
                             >
                               <span>{sub.name}</span>
-                              <ArrowUpRight className="w-3 h-3 opacity-40" />
+                              <ArrowUpRight className="w-3 h-3 opacity-60" />
                             </Link>
                           ))}
                         </motion.div>
@@ -135,7 +135,7 @@ export function Navbar() {
                     "text-xs font-mono font-bold uppercase tracking-wider transition-colors relative py-1",
                     isActive
                       ? "text-accent-crimson font-black"
-                      : "text-foreground/80 hover:text-foreground"
+                      : "text-foreground font-semibold hover:text-accent-crimson"
                   )}
                 >
                   {link.name}

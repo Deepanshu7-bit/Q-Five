@@ -85,7 +85,14 @@ export function MagneticButton({
         {children}
       </span>
       {showArrow && (
-        <span className="relative z-10 w-6 h-6 rounded-full bg-foreground/10 text-foreground flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-foreground group-hover:text-background">
+        <span
+          className={cn(
+            "relative z-10 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
+            variant === "primary"
+              ? "bg-white/20 text-white group-hover:bg-white group-hover:text-accent"
+              : "bg-foreground/10 text-foreground group-hover:bg-foreground group-hover:text-background"
+          )}
+        >
           <ArrowUpRight className="w-3.5 h-3.5" />
         </span>
       )}
