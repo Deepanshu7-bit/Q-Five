@@ -17,22 +17,29 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("obsidian");
   const [isMounted, setIsMounted] = useState(false);
 
+  const applyThemeToDOM = (t: Theme) => {
+    document.documentElement.setAttribute("data-theme", t);
+    if (t === "obsidian") {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light", "paper");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light", "paper");
+    }
+  };
+
   useEffect(() => {
     setIsMounted(true);
     const savedTheme = localStorage.getItem("qfive-theme") as Theme | null;
-    if (savedTheme === "paper" || savedTheme === "obsidian") {
-      setThemeState(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    } else {
-      setThemeState("obsidian");
-      document.documentElement.setAttribute("data-theme", "obsidian");
-    }
+    const initialTheme: Theme = savedTheme === "paper" || savedTheme === "obsidian" ? savedTheme : "obsidian";
+    setThemeState(initialTheme);
+    applyThemeToDOM(initialTheme);
   }, []);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
     localStorage.setItem("qfive-theme", newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    applyThemeToDOM(newTheme);
   };
 
   const toggleTheme = () => {
